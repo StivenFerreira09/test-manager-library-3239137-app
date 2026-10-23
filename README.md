@@ -1,50 +1,52 @@
 # test-manager-library-3239137-app
 
-> **Prueba técnica · Ficha ADSO 3239137**
-> Horario: **viernes 23 de octubre de 2026, de 7:00 a. m. a 11:00 a. m.** (hora Colombia). Entrega a las **11:00 a. m.**
+Frontend de **Manager Library** en **React + Vite**.
 
-Este repositorio es el **frontend** de *Manager Library*, en **React**. **Empieza vacío a propósito**: se construye en el fork de cada aprendiz.
+Consume el contrato de api-contract.md del repositorio docs a través del backend Laravel.
 
-## Instrucciones
+## Stack
 
-Cada aprendiz debe **crear el fork** de los seis repositorios del proyecto y **resolver el proyecto
-con el spec planteado**.
+| Capa | Tecnología |
+|------|------------|
+| UI | React 18 |
+| Build | Vite 5 |
+| Rutas | React Router 6 |
+| Idioma UI | Español |
 
-1. Hacer fork, a su cuenta de GitHub, de cada repositorio de la tabla del final.
-2. Leer el spec en [`test-manager-library-3239137-docs`](https://github.com/code-sena/test-manager-library-3239137-docs).
-   Se entrega en dos versiones: `spec-python/` y `spec-.net/`.
-3. Desarrollar en los forks.
+## Requisitos
 
-## El reto se desarrolla con React y PHP (Laravel)
+- Node.js 18+
+- npm
+- Backend (api) corriendo en http://localhost:8000
 
-El spec está escrito para Python y para .NET, pero el reto **no** se hace en esos lenguajes:
+## Arranque rápido
 
-| Capa | Tecnología del reto |
-|---|---|
-| Frontend | React |
-| Backend | PHP con Laravel |
+1. Instalar dependencias: npm install
+2. Copiar entorno: cp .env.example .env
+3. Levantar en desarrollo: npm run dev
 
-Lo que el spec define sobre el negocio —historias, criterios de aceptación, reglas, contrato de la
-API, modelo de datos— se respeta. Lo que define sobre la tecnología se traduce a React y Laravel.
+La app queda en: http://localhost:5173
 
-## La prueba no consiste en escribir el código
+## Variables de entorno
 
-El propósito principal es ver la **capacidad de desempeño con SDD** (*Spec-Driven Development*,
-desarrollo guiado por especificación): cómo se lee, se interpreta y se aplica una especificación
-para llevarla a un stack distinto. El código es el medio, no el fin.
+| Variable | Uso |
+|----------|-----|
+| VITE_API_BASE_URL | URL base de la API (ej. http://localhost:8000/api/v1) |
 
-## Entrega
+## Pantallas previstas (según HUs)
 
-Cuenta lo que quede **subido a los forks antes de las 11:00 a. m.** Lo que llegue después no se revisa.
-No hay prórroga: suban avances parciales con commits pequeños durante la prueba.
+- Login (HU-01)
+- Catálogo de libros (HU-03, HU-04)
+- Socios (HU-05)
+- Registrar préstamo (HU-06)
+- Devolver (HU-07)
+- Vencidos (HU-09)
+- Reporte más prestados (HU-10, solo admin)
 
-## Los seis repositorios
+## Relación con el spec
 
-| Repositorio | Qué va ahí |
-|---|---|
-| [`test-manager-library-3239137-docs`](https://github.com/code-sena/test-manager-library-3239137-docs) | El spec: `spec-python/` y `spec-.net/` |
-| [`test-manager-library-3239137-api`](https://github.com/code-sena/test-manager-library-3239137-api) | Backend en PHP (Laravel) |
-| [`test-manager-library-3239137-app`](https://github.com/code-sena/test-manager-library-3239137-app) | Frontend en React |
-| [`test-manager-library-3239137-page`](https://github.com/code-sena/test-manager-library-3239137-page) | Sitio público estático de presentación |
-| [`test-manager-library-3239137-infra`](https://github.com/code-sena/test-manager-library-3239137-infra) | Contenedores, red, volúmenes y motor de base de datos vacío |
-| [`test-manager-library-3239137-tool`](https://github.com/code-sena/test-manager-library-3239137-tool) | Utilidades: sembrador de datos de demostración |
+| Documento | Cómo se aplica aquí |
+|-----------|---------------------|
+| api-contract.md | Todas las llamadas HTTP respetan rutas, códigos y cuerpo de error |
+| spec.md | Las pantallas cubren las historias de usuario del MVP |
+| constitution.md | Mensajes al usuario en español; sin secretos en el frontend |
